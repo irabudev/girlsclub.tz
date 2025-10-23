@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Girl's Girl Club | Your Soft Place to Land</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-pink: #e91e63;
+            --light-pink: #fce4ec;
+            --dark-pink: #c2185b;
+            --accent-purple: #9c27b0;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-pink);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            font-size: 14px;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .lang-btn.active {
+            background-color: var(--light-pink);
+            color: var(--primary-pink);
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--light-pink) 0%, rgba(233, 30, 99, 0.1) 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary-pink);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-pink);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-pink);
+            border: 2px solid var(--primary-pink);
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dark-pink);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--light-pink);
+        }
+
+        /* Connection Section */
+        .connection {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            color: var(--primary-pink);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-pink);
+        }
+
+        .connection-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .connection-text {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .highlight {
+            color: var(--primary-pink);
+            font-weight: 600;
+        }
+
+        /* Vibe Section */
+        .vibe {
+            padding: 100px 0;
+            background-color: var(--light-pink);
+        }
+
+        .vibe-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .vibe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .vibe-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .vibe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .vibe-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--primary-pink);
+        }
+
+        .vibe-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--primary-pink);
+            margin-bottom: 15px;
+        }
+
+        .vibe-desc {
+            font-size: 16px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Proof Section */
+        .proof {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+            background-color: var(--light-pink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .testimonial {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            padding: 15px;
+            font-size: 14px;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .testimonial {
+            transform: translateY(0);
+        }
+
+        /* Invitation Section */
+        .invitation {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-pink) 0%, var(--accent-purple) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .invitation-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        .invitation-cta {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-invite {
+            background-color: var(--white);
+            color: var(--primary-pink);
+        }
+
+        .btn-invite:hover {
+            background-color: var(--light-pink);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: 2fr 1fr 1fr;
+            }
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .footer-desc {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .footer-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--light-pink);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-link {
+            margin-bottom: 10px;
+        }
+
+        .footer-link a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: var(--transition);
+            font-size: 14px;
+        }
+
+        .footer-link a:hover {
+            opacity: 1;
+            color: var(--light-pink);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div>
+                        <div class="logo-text">The Girl's Girl Club</div>
+                    </div>
+                </div>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="sw">SW</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-en="Your Soft Place to Land" data-sw="Karibu Nyumbani">Your Soft Place to Land</h1>
+                <p class="hero-subtitle" data-en="Real talks, zero judgment. Just good vibes and genuine sisterhood." data-sw="Story za ukweli, bila kuhukumiwa. Vibe safi na Udugu wa dhati.">Real talks, zero judgment. Just good vibes and genuine sisterhood.</p>
+                <div class="hero-cta">
+                    <a href="#events" class="btn btn-primary" data-en="✨ Come to Our Next Event" data-sw="✨ Njoo Tukutane">✨ Come to Our Next Event</a>
+                    <a href="#merch" class="btn btn-secondary" data-en="❤️ Shop The Collection" data-sw="❤️ Onyesha Upendo">❤️ Shop The Collection</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connection Section -->
+    <section class="connection">
+        <div class="container">
+            <h2 class="section-title" data-en="Ever feel like you're navigating it all alone?" data-sw="Ushawahi hisi unapambana na maisha peke yako?">Ever feel like you're navigating it all alone?</h2>
+            <div class="connection-content">
+                <p class="connection-text" data-en="Let's be real. Adulting is tough. We're juggling careers, life, and trying to stay sane. Sometimes, you just need a space where you can drop the mask, share what's really on your mind, and be surrounded by women who just... get it. No questions asked. <span class='highlight'>That's us. That's The Girl's Girl Club.</span>" data-sw="Tuwe wakweli. Maisha ya ukubwani ni magumu. Tunapambana na kazi, mahusiano, na kujaribu kubaki timamu. Wakati mwingine, unahitaji tu sehemu ya kuvua 'mask', kusema kile kilicho moyoni mwako, na kuzungukwa na wanawake wanaokuelewa... bila maswali. <span class='highlight'>Sisi ndiyo hao. Hiyo ndiyo The Girl's Girl Club.</span>">Let's be real. Adulting is tough. We're juggling careers, life, and trying to stay sane. Sometimes, you just need a space where you can drop the mask, share what's really on your mind, and be surrounded by women who just... get it. No questions asked. <span class='highlight'>That's us. That's The Girl's Girl Club.</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vibe Section -->
+    <section class="vibe">
+        <div class="container">
+            <h2 class="section-title" data-en="So, What's the Vibe?" data-sw="Vibe Letu Likoje?">So, What's the Vibe?</h2>
+            <div class="vibe-content">
+                <div class="vibe-grid">
+                    <div class="vibe-card">
+                        <div class="vibe-icon">☕</div>
+                        <h3 class="vibe-title" data-en="Deep Dives & Real Talks" data-sw="Mazungumzo ya Kina">Deep Dives & Real Talks</h3>
+                        <p class="vibe-desc" data-en="From mental health to that new serum you love, no topic is off-limits. This is where we get real, learn from each other, and share openly." data-sw="Kutoka afya ya akili hadi siri za urembo, hakuna mada iliyo mwiko. Hapa ni mahali pa kuuliza, kujifunza na kushirikiana kwa uwazi.">From mental health to that new serum you love, no topic is off-limits. This is where we get real, learn from each other, and share openly.</p>
+                    </div>
+                    
+                    <div class="vibe-card">
+                        <div class="vibe-icon">✨</div>
+                        <h3 class="vibe-title" data-en="Glow Ups & Growth" data-sw="Kung'aa na Kukua">Glow Ups & Growth</h3>
+                        <p class="vibe-desc" data-en="We're all about hyping each other up. Through workshops and shared experiences, we empower you to be your best, most confident self." data-sw="Tunaamini katika kuinuana. Kupitia warsha na matukio, tunakupa nguvu ya kuwa toleo lako bora zaidi, kwa ndani na nje.">We're all about hyping each other up. Through workshops and shared experiences, we empower you to be your best, most confident self.</p>
+                    </div>
+                    
+                    <div class="vibe-card">
+                        <div class="vibe-icon">🍹</div>
+                        <h3 class="vibe-title" data-en="Good Times & High Fives" data-sw="Vicheko na Connection">Good Times & High Fives</h3>
+                        <p class="vibe-desc" data-en="Honestly? We're here to have fun. We laugh till it hurts, celebrate the small wins, and build friendships that feel like coming home." data-sw="Zaidi ya yote, tunataka kuwa na wakati mzuri! Tunacheka hadi tunalia, tunasherehekea ushindi (hata ule mdogo), na tunajenga urafiki wa kweli.">Honestly? We're here to have fun. We laugh till it hurts, celebrate the small wins, and build friendships that feel like coming home.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proof Section -->
+    <section class="proof">
+        <div class="container">
+            <h2 class="section-title" data-en="A Glimpse Into Our World" data-sw="Tazama Picha Zetu">A Glimpse Into Our World</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <div style="width:100%;height:100%;background-color:#f8bbd9;display:flex;align-items:center;justify-content:center;color:var(--primary-pink);font-size:24px;">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="testimonial" data-en="Finally found my people!" data-sw="Mwishowe nimewapata watu wangu!">Finally found my people!</div>
+                </div>
+                <div class="gallery-item">
+                    <div style="width:100%;height:100%;background-color:#f48fb1;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:24px;">
+                        <i class="fas fa-laugh"></i>
+                    </div>
+                    <div class="testimonial" data-en="The energy is everything. ✨" data-sw="Nishati yake ni kila kitu. ✨">The energy is everything. ✨</div>
+                </div>
+                <div class="gallery-item">
+                    <div style="width:100%;height:100%;background-color:#ec407a;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:24px;">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="testimonial" data-en="I leave every event feeling so full." data-sw="Ninaondoka kwa kila tukio nikihisi nimejaa.">I leave every event feeling so full.</div>
+                </div>
+                <div class="gallery-item">
+                    <div style="width:100%;height:100%;background-color:#d81b60;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:24px;">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="testimonial" data-en="This sisterhood changed my life." data-sw="Udada huu umebadilisha maisha yangu.">This sisterhood changed my life.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Invitation Section -->
+    <section class="invitation">
+        <div class="container">
+            <h2 class="invitation-title" data-en="Your Seat is Waiting" data-sw="Nafasi Yako Inakusubiri">Your Seat is Waiting</h2>
+            <div class="invitation-cta">
+                <a href="#events" class="btn btn-invite" data-en="✨ Come to Our Next Event" data-sw="✨ Njoo Tukutane">✨ Come to Our Next Event</a>
+                <a href="#merch" class="btn btn-invite" data-en="❤️ Shop The Collection" data-sw="❤️ Onyesha Upendo">❤️ Shop The Collection</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">The Girl's Girl Club</div>
+                    <p class="footer-desc" data-en="Your soft place to land. Real talks, zero judgment. Just good vibes and genuine sisterhood." data-sw="Karibu nyumbani. Story za ukweli, bila kuhukumiwa. Vibe safi na Udugu wa dhati.">Your soft place to land. Real talks, zero judgment. Just good vibes and genuine sisterhood.</p>
+                </div>
+                <div class="footer-links-container">
+                    <h4 class="footer-title" data-en="Quick Links" data-sw="Viungo Vya Haraka">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#events" data-en="Events" data-sw="Matukio">Events</a></li>
+                        <li class="footer-link"><a href="#merch" data-en="Merchandise" data-sw="Bidhaa">Merchandise</a></li>
+                        <li class="footer-link"><a href="#" data-en="About Us" data-sw="Kuhusu Sisi">About Us</a></li>
+                        <li class="footer-link"><a href="#" data-en="Contact" data-sw="Wasiliana Nasi">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-container">
+                    <h4 class="footer-title" data-en="Connect" data-sw="Ungana Nasi">Connect</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#" data-en="Instagram" data-sw="Instagram">Instagram</a></li>
+                        <li class="footer-link"><a href="#" data-en="Facebook" data-sw="Facebook">Facebook</a></li>
+                        <li class="footer-link"><a href="#" data-en="Twitter" data-sw="Twitter">Twitter</a></li>
+                        <li class="footer-link"><a href="#" data-en="Newsletter" data-sw="Barua pepe">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-en="© 2023 The Girl's Girl Club. All rights reserved." data-sw="© 2023 Klabu ya Wasichana. Haki zote zimehifadhiwa.">© 2023 The Girl's Girl Club. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language Switching Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const langButtons = document.querySelectorAll('.lang-btn');
+            const currentLang = 'en';
+            
+            langButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const selectedLang = this.getAttribute('data-lang');
+                    
+                    // Update active button
+                    langButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update all text elements
+                    updateLanguage(selectedLang);
+                });
+            });
+            
+            function updateLanguage(lang) {
+                const elements = document.querySelectorAll('[data-en]');
+                
+                elements.forEach(element => {
+                    if (element.getAttribute(`data-${lang}`)) {
+                        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                            element.value = element.getAttribute(`data-${lang}`);
+                        } else {
+                            element.innerHTML = element.getAttribute(`data-${lang}`);
+                        }
+                    }
+                });
+            }
+            
+            // Initialize with English
+            updateLanguage(currentLang);
+        });
+    </script>
+</body>
+</html>
